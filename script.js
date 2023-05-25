@@ -1,11 +1,14 @@
 //your JS code here. If required.
-let prom  = new Promise((resolve) =>{
-   let out = "Hello, world!"
-	resolve(out);
-},1000)
+function delayHello() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hello, world!");
+    }, 1000);
+  });
+}
 
-prom.then((x) =>{
-let div = document.getElementById("output");
-div.innerText = x;
-	
-})
+const outputElement = document.getElementById("output");
+
+delayHello().then((message) => {
+  outputElement.textContent = message;
+});
