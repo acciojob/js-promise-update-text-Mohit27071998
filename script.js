@@ -4,5 +4,8 @@ let prom  = new Promise((resolve) =>{
 	resolve(out);
 },1000)
 
+prom.then((x) =>{
 let div = document.getElementById("output");
-div.innerText = prom;
+div.innerText = x;
+	
+})
